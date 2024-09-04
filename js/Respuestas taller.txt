@@ -1,0 +1,63 @@
+1- ¿Qué función te permitió filtrar los elementos "extraños" del array? Explica.
+la función filter() me permitió filtrar los elementos extraños creando un nuevo arreglo con todos los elementos del arreglo original al que le pedí que filtrara buscando elementos de tipo string.
+
+2- ¿Cómo detectaste el tipo de dato de cada elemento del array? Explica.
+Utilicé dentro de la función de filter el operador de typeof de esta forma element => typeof element === 'string' lo que devuelve un arreglo con los elementos que sean solo de tipo string.
+
+3- ¿Has notado que algunas funciones parecen "flechas"? Busca información sobre "funciones flechas" y describe su sintaxis.
+Las funciones flecha permiten definir de manera compacta una función convencional. Si la función tiene solamente una sentencia que devuelve un valor, el uso de funciones flecha nos permite eliminar las llaves y la palabra return.
+Esta es la sintaxis básica
+() => { sentencias }
+Un ejemplo:
+//Antes (forma tradicional)
+var saludo = function () {
+  return 'Hola a tod@s';
+};
+console.log( saludo() ); //Imprime Hola a tod@s
+
+//Ahora
+let saludo = () => `Hola a tod@s`;
+console.log( saludo() ); //Imprime Hola a tod@s
+
+4-  ¿Qué función te permitió ordenar el array alfabéticamente? Explica.
+El método sort() junto a la función de comparación (a, b) => a.localeCompare(b) para comparar las cadenas de texto a y b. localeCompare asegura que se ordene alfabéticamente.
+
+
+5- Investiga otra función de los arrays que consideres útil y comparte en qué situaciones se puede utilizar.
+El método join() une todos los elementos de una matriz (o un objeto similar a una matriz) en una cadena y devuelve esta cadena.
+const elements = ['Fire', 'Air', 'Water'];
+
+console.log(elements.join());
+// Expected output: "Fire,Air,Water"
+
+console.log(elements.join(''));
+// Expected output: "FireAirWater"
+
+console.log(elements.join('-'));
+// Expected output: "Fire-Air-Water"
+
+
+
+El método forEach() ejecuta una función proporcionada una vez para cada elemento del array, pero no devuelve un nuevo array. Es útil para realizar efectos secundarios o ejecutar operaciones que no cambian el array original.
+let numbers = [1, 2, 3, 4, 5];
+
+// Usa forEach para imprimir cada número
+numbers.forEach(num => {
+  console.log(num);
+});
+
+// Imprime:
+// 1
+// 2
+// 3
+// 4
+// 5
+
+El método map() crea un nuevo array con los resultados de la llamada a la función indicada aplicados a cada uno de sus elementos.
+Ejemplo:
+let numbers = [1, 2, 3, 4, 5];
+
+// Usa map para crear un nuevo array con los cuadrados de los números
+let multiplica = numbers.map(num => num * num);
+
+console.log(multiplica); // [1, 4, 9, 16, 25]
